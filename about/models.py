@@ -1,9 +1,14 @@
+import datetime
 from django.db import models
 from cloudinary.models import CloudinaryField
-import datetime
 
 # Create your models here.
+
+
 class About(models.Model):
+    """
+    Stores a single aboutme text.
+    """
     title = models.CharField(max_length=100)
     profile_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
@@ -17,6 +22,9 @@ class About(models.Model):
 
 
 class CollaborateRequest(models.Model):
+    """
+    Stores a single collaboration request message
+    """
     name = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()
