@@ -30,7 +30,7 @@ def about_detail(request):
             )
     
     about = About.objects.all().order_by('-updated_on').first()
-    collaborate_form = CollaborateForm
+    collaborate_form = CollaborateForm()
 
     context = {
         "about": about,
